@@ -488,6 +488,9 @@ do_devicecheck;
 do_versioncheck;
 do_levelcheck;
 
+miui_version="$(file_getprop /system/build.prop ro.miui.version.code_time)";
+test -z "$miui_version" || abort " " "MIUI is not supported. Aborting...";
+
 ui_print "Installing...";
 CORE=$($BB grep -oE 'ak.*core.sh' anykernel.sh);
 [ -f tools/$CORE ] || $BB ln -s $AKHOME/tools/ak*-core.sh $AKHOME/tools/$CORE;
