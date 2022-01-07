@@ -16,7 +16,7 @@ device.name3=
 device.name4=
 device.name5=
 supported.versions=11.0
-supported.patchlevels=
+supported.patchlevels=2021-10-01
 '; } # end properties
 
 # shell variables
