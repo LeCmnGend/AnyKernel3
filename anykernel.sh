@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=FuanDoKernel by @LeCmnGend
+kernel.string=FuanDo Kernel by @LeCmnGend
 do.devicecheck=1
 do.modules=1
 do.systemless=0
