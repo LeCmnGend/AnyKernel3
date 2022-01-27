@@ -4,26 +4,25 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Genom Kernel by rama982 @ telegram
+kernel.string=FuanDoKernel by @LeCmnGend
 do.devicecheck=1
 do.modules=1
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=lavender
-device.name2=
+device.name1=ginkgo
+device.name2=willow
 device.name3=
 device.name4=
 device.name5=
-supported.versions=10 - 11
-supported.patchlevels=
+supported.versions=10 - 12
+supported.patchlevels=2021-10-01
 '; } # end properties
 
 # shell variables
 block=/dev/block/bootdevice/by-name/boot;
-is_slot_device=0;
+is_slot_device=auto;
 ramdisk_compression=auto;
-
 
 ## AnyKernel methods (DO NOT CHANGE)
 # import patching functions/variables - see for reference
@@ -38,8 +37,7 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 ## AnyKernel install
 dump_boot;
-
-
 write_boot;
+
 ## end install
 
