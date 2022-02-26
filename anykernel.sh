@@ -38,6 +38,9 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 ## AnyKernel install
 dump_boot;
 
+# Force doubletab to wake
+echo "1" > /sys/touchpanel/double_tap
+
 # Begin ramdisk changes
 if [ -d $ramdisk/.backup ]; then
 	mv /tmp/anykernel/overlay.d $ramdisk/overlay.d
