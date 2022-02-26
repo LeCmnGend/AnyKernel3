@@ -37,6 +37,16 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 ## AnyKernel install
 dump_boot;
+
+# Begin ramdisk changes
+if [ -d $ramdisk/.backup ]; then
+	mv /tmp/anykernel/overlay.d $ramdisk/overlay.d
+	chmod -R 750 $ramdisk/overlay.d/*
+	chown -R root:root $ramdisk/overlay.d/*
+	chmod -R 755 $ramdisk/overlay.d/sbin/init.ginkgo.sh
+	chown -R root:root $ramdisk/overlay.d/sbin/init.ginkgo.sh
+fi;
+
 write_boot;
 
 ## end install
