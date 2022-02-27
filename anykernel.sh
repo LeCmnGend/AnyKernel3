@@ -34,21 +34,11 @@ ramdisk_compression=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
+set_perm_recursive 0 0 755 644 $ramdisk/overlay.d/*;
+set_perm_recursive 0 0 750 750 $ramdisk/overlay.d/init* $ramdisk/overlay.d/sbin;
 
 ## AnyKernel install
 dump_boot;
-
-# Force doubletab to wake
-echo "1" > /sys/touchpanel/double_tap
-
-# Begin ramdisk changes
-if [ -d $ramdisk/.backup ]; then
-	mv /tmp/anykernel/overlay.d $ramdisk/overlay.d
-	chmod -R 750 $ramdisk/overlay.d/*
-	chown -R root:root $ramdisk/overlay.d/*
-	chmod -R 755 $ramdisk/overlay.d/sbin/init.ginkgo.sh
-	chown -R root:root $ramdisk/overlay.d/sbin/init.ginkgo.sh
-fi;
 
 write_boot;
 
