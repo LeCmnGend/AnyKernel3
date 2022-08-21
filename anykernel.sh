@@ -16,7 +16,7 @@ device.name3=RMX1911
 device.name4=
 device.name5=
 supported.versions=10 - 12.1
-supported.patchlevels=2021-10-01
+supported.patchlevels=2021-06-01
 '; } # end properties
 
 # shell variables
