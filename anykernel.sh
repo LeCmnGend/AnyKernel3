@@ -2,7 +2,7 @@
 ## osm0sis @ xda-developers
 
 ### AnyKernel setup
-# begin properties
+# global properties
 properties() { '
 kernel.string=FuanDo Kernel by @LeCmnGend
 do.devicecheck=1
@@ -18,6 +18,7 @@ device.name5=
 supported.versions=11 - 14
 supported.patchlevels=2021-10-01
 '; } # end properties
+
 
 ### AnyKernel install
 ## boot files attributes
