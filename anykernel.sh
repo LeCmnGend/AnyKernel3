@@ -84,7 +84,7 @@ if mountpoint -q /data; then
 fi
 
 # import functions/variables and setup patching - see for reference (DO NOT REMOVE)
-. tools/ak3-core.sh && attributes;
+. tools/ak3-core.sh;
 
 # boot install
 dump_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
