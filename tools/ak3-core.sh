@@ -353,12 +353,14 @@ flash_boot() {
             echo "Attempting kernel unpack with busybox $comp..." >&2;
             $comp -dc $kernel > kernel;
           fi;
-          if strings kernel 2>/dev/null | grep -q -E '^/data/adb/ksud$'; then
+          strings kernel > stringstmp 2>/dev/null;
+          if grep -q -E '^/data/adb/ksud$' stringstmp; then
             touch $home/kernelsu_patched;
-            strings kernel 2>/dev/null | grep -E -m1 'Linux version.*#' > $home/vertmp;
+            grep -E -m1 'Linux version.*#' stringstmp > $home/vertmp;
           else
             ui_print " " "Warning: No KernelSU support detected in kernel!";
           fi;
+          rm -f stringstmp;
           if [ "$comp" ]; then
             $bin/magiskboot compress=$comp kernel kernel.$comp;
             if [ $? != 0 ] && $comp --help 2>/dev/null; then
@@ -388,10 +390,8 @@ flash_boot() {
   if [ $? != 0 ]; then
     abort "Repacking image failed. Aborting...";
   fi;
-  if [ -f .magisk ]; then
-    touch $home/magisk_patched;
-    unset PATCHVBMETAFLAG;
-  fi;
+  [ "$PATCHVBMETAFLAG" ] && unset PATCHVBMETAFLAG;
+  [ -f .magisk ] && touch $home/magisk_patched;
 
   cd $home;
   if [ -f "$bin/futility" -a -d "$bin/chromeos" ]; then
@@ -884,7 +884,7 @@ setup_ak() {
       esac;
       for name in $parttype; do
         for part in $name$slot $name; do
-          if [ "$(grep -w "$part" /proc/mtd 2> /dev/null)" ]; then
+          if [ "$(grep -w "$part" /proc/mtd 2>/dev/null)" ]; then
             mtdmount=$(grep -w "$part" /proc/mtd);
             mtdpart=$(echo $mtdmount | cut -d\" -f2);
             if [ "$mtdpart" == "$part" ]; then
