@@ -937,7 +937,7 @@ setup_ak() {
   if [ ! "$NO_BLOCK_DISPLAY" ]; then
     ui_print "$BLOCK";
   fi;
-  
+
   # allow multi-partition ramdisk modifying configurations (using reset_ak)
   name=$(basename $BLOCK | sed -e 's/_a$//' -e 's/_b$//');
   if [ "$BLOCK" ] && [ ! -d "$RAMDISK" -a ! -d "$PATCH" ]; then
