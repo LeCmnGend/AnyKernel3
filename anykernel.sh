@@ -12,8 +12,8 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=raphael
 device.name2=raphaelin
-supported.versions=10 - 12.1
-supported.patchlevels=2021-10-01
+supported.versions=10 - 14
+supported.patchlevels=2022-10-01
 '; } # end properties
 
 # shell variables
