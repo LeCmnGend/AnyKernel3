@@ -35,8 +35,8 @@ keep_vbmeta_flag=auto;
 set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
-set_perm_recursive 0 0 755 644 $ramdisk/overlay.d/*;
-set_perm_recursive 0 0 750 750 $ramdisk/overlay.d/init* $ramdisk/overlay.d/sbin;
+#set_perm_recursive 0 0 755 644 $ramdisk/overlay.d/*;
+#set_perm_recursive 0 0 750 750 $ramdisk/overlay.d/init* $ramdisk/overlay.d/sbin;
 
 ## AnyKernel boot install
 dump_boot;
