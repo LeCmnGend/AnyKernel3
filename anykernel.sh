@@ -4,15 +4,17 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Phantom kernel by shygosh
-do.devicecheck=0
+kernel.string=FuanDo Kernel by t.me/LeCmnGend
+do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=
-supported.versions=
-supported.patchlevels=
+device.name1=r5x
+device.name2=RMX1911
+device.name3=RMX1919
+supported.versions=11-14
+supported.patchlevels=2021-06-01
 supported.vendorpatchlevels=
 '; } # end properties
 
