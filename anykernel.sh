@@ -10,12 +10,18 @@ do.modules=1
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=r5x
-device.name2=RMX1919
-device.name3=RMX1911
-device.name4=
-device.name5=
-supported.versions=10 - 12.1
+device.name1=haydn
+device.name2=haydn_in
+device.name3=MI 11x Pro
+device.name4=Redmi K40 Pro
+device.name5=Xiaomi 11x Pro
+device.name6=Redmi K40 Pro+
+device.name7=MI 11i
+device.name8=K40 Pro
+device.name9=K40 Pro+
+device.name10=milahaina
+device.name11=haydnin
+supported.versions=11 - 14
 supported.patchlevels=2021-06-01
 '; } # end properties
 
