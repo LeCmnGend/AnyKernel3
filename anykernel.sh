@@ -22,7 +22,6 @@ device.name9=K40 Pro+
 device.name10=milahaina
 device.name11=haydnin
 supported.versions=11 - 14
-supported.patchlevels=2021-06-01
 '; } # end properties
 
 # shell variables
