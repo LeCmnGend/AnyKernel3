@@ -13,9 +13,7 @@ do.cleanuponabort=0
 device.name1=r5x
 device.name2=RMX1911
 device.name3=RMX1919
-supported.versions=11-14
-supported.patchlevels=2021-06-01
-supported.vendorpatchlevels=
+supported.versions=9-14
 '; } # end properties
 
 ## Optimize F2FS extension list (@arter97)
