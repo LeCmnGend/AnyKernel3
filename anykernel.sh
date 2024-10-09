@@ -6,14 +6,15 @@
 properties() { '
 kernel.string=FuanDo Kernel by t.me/LeCmnGend
 do.devicecheck=1
-do.modules=0
-do.systemless=1
+do.modules=1
+do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=r5x
 device.name2=RMX1911
 device.name3=RMX1919
-supported.versions=9-14
+device.name4=realme5
+supported.versions=10-12.1
 '; } # end properties
 
 ## Optimize F2FS extension list (@arter97)
@@ -68,7 +69,7 @@ set_perm_recursive 0 0 750 750 $RAMDISK/init* $RAMDISK/sbin;
 
 # boot shell variables
 BLOCK=/dev/block/by-name/boot;
-IS_SLOT_DEVICE=0;
+IS_SLOT_DEVICE=auto;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
 
