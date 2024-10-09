@@ -65,6 +65,9 @@ fi
 boot_attributes() {
 set_perm_recursive 0 0 755 644 $RAMDISK/*;
 set_perm_recursive 0 0 750 750 $RAMDISK/init* $RAMDISK/sbin;
+
+set_perm_recursive 0 0 755 644 $ramdisk/overlay.d/*;
+set_perm_recursive 0 0 750 750 $ramdisk/overlay.d/init* $ramdisk/overlay.d/sbin;
 } # end attributes
 
 # boot shell variables
