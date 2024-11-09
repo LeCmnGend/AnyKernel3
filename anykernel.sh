@@ -21,7 +21,7 @@ device.name8=K40 Pro
 device.name9=K40 Pro+
 device.name10=milahaina
 device.name11=haydnin
-supported.versions=11 - 14
+supported.versions=11 - 15
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
