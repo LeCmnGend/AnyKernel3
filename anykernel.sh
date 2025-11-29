@@ -4,15 +4,15 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=KernelSU by KernelSU Developers
-do.devicecheck=0
+kernel.string=FuanDo Kernel by @LeCmnGend
+do.devicecheck=1
 do.modules=0
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=
-device.name2=
-device.name3=
+device.name1=diting
+device.name2=Xiaomi 12T Pro
+device.name3=Redmi K50 Ultra
 device.name4=
 device.name5=
 supported.versions=
