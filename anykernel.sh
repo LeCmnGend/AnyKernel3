@@ -43,6 +43,21 @@ esac
 ui_print " " "  -> ksu_supported: $ksu_supported"
 $ksu_supported || abort "  -> Non-GKI device, abort."
 
+# Push modules to vendor_dlkm
+if [ -d "$AKHOME/modules/vendor_dlkm/lib/modules" ]; then
+    ui_print "Pushing modules to vendor_dlkm..."
+    mount /vendor_dlkm 2>/dev/null || mount /dev/block/bootdevice/by-name/vendor_dlkm /vendor_dlkm 2>/dev/null
+    if [ -d "/vendor_dlkm/lib/modules" ]; then
+        cp -f $AKHOME/modules/vendor_dlkm/lib/modules/*.ko /vendor_dlkm/lib/modules/
+        for f in modules.dep modules.load modules.alias modules.softdep; do
+            [ -f "$AKHOME/modules/vendor_dlkm/lib/modules/$f" ] && \
+                cp -f $AKHOME/modules/vendor_dlkm/lib/modules/$f /vendor_dlkm/lib/modules/
+        done
+    else
+        ui_print "WARNING: /vendor_dlkm/lib/modules not found, skipping..."
+    fi
+fi
+
 # boot install
 split_boot
 if [ -f "split_img/ramdisk.cpio" ]; then
